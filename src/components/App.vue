@@ -1,13 +1,17 @@
 <template>
-    <div id="calendar">
-        <div v-for="(week, index) in weeks" :key="index" class="calendar-week">
-            <calendar-day v-for="(day, index) in week" :key="index" :day="day"></calendar-day>
+    <main>
+       <bar-day></bar-day>
+        <div id="calendar">
+            <div v-for="(week, index) in weeks" :key="index" class="calendar-week">
+                <calendar-day v-for="(day, index) in week" :key="index" :day="day"></calendar-day>
+            </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <script>
 
+import BarDay from './BarDay.vue'
 import CalendarDay from './CalendarDay.vue';
 
 export default {
@@ -18,7 +22,8 @@ export default {
        }
     },
     components: {
-        CalendarDay
+        CalendarDay,
+        BarDay
     },
     computed: {
         days() {

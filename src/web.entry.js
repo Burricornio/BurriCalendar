@@ -11,6 +11,7 @@ Object.defineProperty(Vue.prototype, '$moment', { get() { return this.$root.mome
 // Importamos conponentes
 import App from './components/App.vue';
 
+
 new Vue({
   el: '#app',
   data: {

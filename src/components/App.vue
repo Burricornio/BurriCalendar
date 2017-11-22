@@ -1,18 +1,24 @@
 <template>
-    <div>
-        <div v-for="(week, index) in weeks" :key="index">
-            Week
-            <div v-for="(day, index) in week" :key="index">{{ day }}</div>
+    <div id="calendar">
+        <div v-for="(week, index) in weeks" :key="index" class="calendar-week">
+            <calendar-day v-for="(day, index) in week" :key="index" :day="day"></calendar-day>
         </div>
     </div>
 </template>
+
 <script>
+
+import CalendarDay from './CalendarDay.vue';
+
 export default {
     data() {
        return {
            month: 11,
            year: 2017
        }
+    },
+    components: {
+        CalendarDay
     },
     computed: {
         days() {

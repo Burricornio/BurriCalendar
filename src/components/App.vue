@@ -15,19 +15,18 @@ import BarDay from './BarDay.vue'
 import CalendarDay from './CalendarDay.vue';
 
 export default {
-    data() {
-       return {
-           month: 11,
-           year: 2017
-       }
-    },
     components: {
         CalendarDay,
         BarDay
     },
     computed: {
+        month() {
+            return this.$store.state.currentMonth;
+        },
+        year() {
+            return this.$store.state.currentYear;
+        },
         days() {
-
             // Generamos todos los días en el mes actual
             let days = [];
             let currentDay = this.$moment(`${this.year}-${this.month}-1`, 'YYYY-M-D');

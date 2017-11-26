@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import './style.scss';
 
+// Importamos vuex
+import Vuex from 'vuex';
+Vue.use(Vuex);
+
 // Importamos la librería 'moment.js'
 import moment from 'moment-timezone';
 // Configuramos que se adapte alas diferentes franjas horarias
@@ -19,5 +23,11 @@ new Vue({
   },
   components: {
       App
+  },
+  store: {
+    state: {
+      currentYear: 2017,
+      currentMonth: 11
+    }
   }
 });

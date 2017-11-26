@@ -1,5 +1,6 @@
 <template>
     <main>
+       <header-calendar></header-calendar>
        <bar-day></bar-day>
         <div id="calendar">
             <div v-for="(week, index) in weeks" :key="index" class="calendar-week">
@@ -11,11 +12,13 @@
 
 <script>
 
+import HeaderCalendar from './HeaderCalendar.vue';
 import BarDay from './BarDay.vue'
 import CalendarDay from './CalendarDay.vue';
 
 export default {
     components: {
+        HeaderCalendar,
         CalendarDay,
         BarDay
     },

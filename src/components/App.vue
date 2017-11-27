@@ -7,6 +7,7 @@
                 <calendar-day v-for="(day, index) in week" :key="index" :day="day"></calendar-day>
             </div>
         </div>
+        <event-form></event-form>
     </main>
 </template>
 
@@ -15,12 +16,14 @@
 import HeaderCalendar from './HeaderCalendar.vue';
 import BarDay from './BarDay.vue'
 import CalendarDay from './CalendarDay.vue';
+import EventForm from './EventForm.vue';
 
 export default {
     components: {
         HeaderCalendar,
         CalendarDay,
-        BarDay
+        BarDay,
+        EventForm
     },
     computed: {
         month() {

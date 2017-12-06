@@ -4,6 +4,14 @@ import './style.scss';
 // Importamos el store de vuex
 import store from './store';
 
+let events = [
+  { description: 'Random Event 1', date: moment('2017-11-07', 'YYYY-MM-DD') },
+  { description: 'Random Event 2', date: moment('2017-11-10', 'YYYY-MM-DD') },
+  { description: 'Random Event 3', date: moment('2017-11-27', 'YYYY-MM-DD') }
+]
+let initialState = Object.assign( {}, store.state, { events });
+store.replaceState(initialState);
+
 // Importamos la librería 'moment.js'
 import moment from 'moment-timezone';
 // Configuramos que se adapte alas diferentes franjas horarias

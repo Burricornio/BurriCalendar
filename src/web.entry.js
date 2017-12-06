@@ -32,5 +32,15 @@ new Vue({
   components: {
       App
   },
-  store
+  store,
+  render(createElement) { // Vamos a renderizar la app creando un elemento en vez de un template en el index para hacer server-side-rendering. Necesitamos 3 parametros:
+    return createElement(
+      'div', //1 - Elemento que queremos renderizar
+      { attrs: { id: 'app' } }, // Atributos del elemento
+      [
+        createElement('app') // Elementos hijos
+      ]
+    )
+
+  }
 });
